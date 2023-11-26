@@ -2,26 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --g-box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, .1);
+  --g-blur: blur(15px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+:root {
+  --g-color-black: #000;
+  --g-color-white: #fff;
+  --g-color-medium-gray-opacity: hsla(0, 0%, 46%, .2);
+  --g-color-white-opacity-10: hsla(0, 0%, 100%, .1);
+  --g-color-black-opacity-10: rgba(0, 0, 0, .1);
+  --g-color-black-opacity-20: rgba(0, 0, 0, .2);
+  --g-color-black-opacity-30: rgba(0, 0, 0, .3);
+  --g-color-black-opacity-40: rgba(0, 0, 0, .4);
+  --g-color-gucci-beauty: #ebbfb1;
+  --g-color-gucci-garden: #ed9cad;
+  --g-color-gucci-osteria: #ed9cad;
+  --g-color-my-gucci-account: #7c183d;
+  --g-color-vault-green: #6fd885;
+  --g-color-vault-yellow: #ff0;
+  --g-color-foreground: #000;
+  --g-color-background: #fff;
+  --g-color-accessibility: #337eff;
+  --g-color-backdrop: var(--g-color-black-opacity-40);
+  --g-color-divider: rgba(0, 0, 0, .15);
+  --g-color-divider-inversed: hsla(0, 0%, 100%, .5);
+  --g-color-hover-shadow: rgba(0, 0, 0, .1);
+  --g-color-hover-shadow-inversed: hsla(0, 0%, 100%, .5);
+  --g-color-disabled: #767676;
+  --g-color-disabled-opacity: hsla(0, 0%, 46%, .2);
+  --g-color-error: #c00;
+  --g-color-error-inversed: #ec716b;
+  --g-color-success: #063;
+  --g-color-success-inversed: #60c96d;
+  --g-color-warning: #994d00;
+  --g-color-warning-inversed: #ee692d;
 }
