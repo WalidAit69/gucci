@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useScrollDirection } from "@/hooks/UseScroll";
 import { Plus, Search, Menu } from "lucide-react";
 import { motion, useAnimation } from "framer-motion";
@@ -9,22 +9,33 @@ function Navbar() {
   const ScrollY = useScrollDirection();
 
   const headercontrols = useAnimation();
+  const headercontrol2 = useAnimation();
   const Logocontrols = useAnimation();
   const linkcontrols = useAnimation();
 
   useEffect(() => {
     if (ScrollY > 0) {
+      headercontrols.start({ height: "80px" });
       Logocontrols.start({ width: "150px", top: "50%" });
       linkcontrols.start({ opacity: 1 });
+      headercontrol2.start({ position: "fixed" });
     } else {
-      Logocontrols.start({ width: "100%", top: "230%" });
+      headercontrols.start({ height: "350px" });
+      Logocontrols.start({ width: "100%", top: "50%" });
       linkcontrols.start({ opacity: 0 });
+      headercontrol2.start({ position: "static" });
     }
   }, [ScrollY]);
 
   return (
-    <header className="fixed w-[100vw] z-[99] bg-white">
-      <motion.nav className="flex items-center justify-between max-w-7xl mx-auto h-20 w-full relative">
+    <motion.header
+      animate={headercontrol2}
+      className="fixed w-full z-[99] bg-white"
+    >
+      <motion.nav
+        animate={headercontrols}
+        className="flex items-center justify-between max-w-7xl mx-auto h-20 w-full relative"
+      >
         <motion.div
           animate={linkcontrols}
           className="flex items-center gap-2 text-sm"
@@ -40,12 +51,12 @@ function Navbar() {
           <img src="/logo.svg" alt="" />
         </motion.div>
 
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-5 absolute right-0 top-7">
           <Search size={20} />
           <Menu size={20} />
         </div>
       </motion.nav>
-    </header>
+    </motion.header>
   );
 }
 

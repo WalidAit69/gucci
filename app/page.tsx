@@ -6,7 +6,7 @@ import ServicesSection from "@/components/main/ServicesSection";
 
 export default function Home() {
   return (
-    <main className="top-[50%] w-full absolute -z-10">
+    <main className="w-full">
       <MainSection />
       <ExploreSection />
       <FeaturedSection />
