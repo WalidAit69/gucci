@@ -13,12 +13,12 @@ function Navbar() {
   const linkcontrols = useAnimation();
 
   useEffect(() => {
-    if (ScrollY === 0) {
-      Logocontrols.start({ width: "100%", top: "230%" });
-      linkcontrols.start({ opacity: 0 });
-    } else {
+    if (ScrollY > 0) {
       Logocontrols.start({ width: "150px", top: "50%" });
       linkcontrols.start({ opacity: 1 });
+    } else {
+      Logocontrols.start({ width: "100%", top: "230%" });
+      linkcontrols.start({ opacity: 0 });
     }
   }, [ScrollY]);
 
@@ -35,7 +35,6 @@ function Navbar() {
         <motion.div
           initial={{ top: "50%" }}
           animate={Logocontrols}
-          transition={{ duration: 0.8, ease: [0.5, 0, 0, 1] }}
           className="w-[150px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         >
           <img src="/logo.svg" alt="" />
