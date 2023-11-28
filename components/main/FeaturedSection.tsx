@@ -5,8 +5,8 @@ import { motion, useAnimation, useInView } from "framer-motion";
 
 function FeaturedSection() {
   return (
-    <section className="mt-[20rem] ">
-      <h1 className="my-[8rem] w-full flex justify-center uppercase text-sm font-semibold">
+    <section className="">
+      <h1 className="mb-[6rem] w-full flex justify-center uppercase text-sm font-semibold">
         Featured
       </h1>
 

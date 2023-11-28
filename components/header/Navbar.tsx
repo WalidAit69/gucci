@@ -30,6 +30,7 @@ function Navbar() {
   return (
     <motion.header
       animate={headercontrol2}
+      transition={{ duration: 0.5, ease: [0.8, 0, 0, 0.8] }}
       className="fixed w-full z-[99] bg-white"
     >
       <motion.nav

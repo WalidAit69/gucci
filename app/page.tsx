@@ -10,8 +10,8 @@ export default function Home() {
       <MainSection />
       <ExploreSection />
       <FeaturedSection />
-      <ServicesSection />
-      <Footer />
+      {/* <ServicesSection />
+      <Footer /> */}
     </main>
   );
 }
