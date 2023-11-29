@@ -9,7 +9,7 @@ export default function Home() {
     <main className="w-full">
       <MainSection />
       <ExploreSection />
-      <FeaturedSection />
+      {/* <FeaturedSection /> */}
       {/* <ServicesSection />
       <Footer /> */}
     </main>
