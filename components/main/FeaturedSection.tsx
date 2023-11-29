@@ -19,7 +19,7 @@ function FeaturedSection() {
               transition={{ duration: 1, ease: [0.5, 0, 0, 1] }}
               src="/featured.avif"
               alt=""
-              className="w-full h-[730px] max-2xl:h-[630px] object-cover"
+              className="w-full h-[930px] max-[1700px]:h-[730px] max-2xl:h-[630px] object-cover"
             />
           </div>
 
