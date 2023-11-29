@@ -9,9 +9,9 @@ export default function Home() {
     <main className="w-full">
       <MainSection />
       <ExploreSection />
-      {/* <FeaturedSection /> */}
-      {/* <ServicesSection />
-      <Footer /> */}
+      <FeaturedSection />
+      <ServicesSection />
+      {/* <Footer /> */}
     </main>
   );
 }

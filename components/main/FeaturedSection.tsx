@@ -6,20 +6,20 @@ import { motion, useAnimation, useInView } from "framer-motion";
 function FeaturedSection() {
   return (
     <section className="">
-      <h1 className="mb-[6rem] w-full flex justify-center uppercase text-sm font-semibold">
+      <h1 className="mb-[6rem] max-lg:mt-[6rem] w-full flex justify-center uppercase text-sm font-semibold">
         Featured
       </h1>
 
-      <div className="max-w-7xl mx-auto">
-        <div className="grid  grid-flow-col gap-4 mx-5">
-          <div className="overflow-hidden w-[600px] ">
+      <div className="max-w-[1700px] max-2xl:max-w-7xl mx-auto">
+        <div className="grid grid-flow-col gap-4 mx-5 max-lg:grid-flow-row max-lg:place-items-center">
+          <div className="overflow-hidden w-[800px] max-2xl:w-[600px] max-lg:w-full">
             <motion.img
               initial={{ scale: 1.5 }}
               whileInView={{ scale: 1 }}
               transition={{ duration: 1, ease: [0.5, 0, 0, 1] }}
               src="/featured.avif"
               alt=""
-              className="w-full h-[730px] object-cover"
+              className="w-full h-[730px] max-2xl:h-[630px] object-cover"
             />
           </div>
 
