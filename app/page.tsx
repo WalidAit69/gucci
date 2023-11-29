@@ -11,7 +11,7 @@ export default function Home() {
       <ExploreSection />
       <FeaturedSection />
       <ServicesSection />
-      {/* <Footer /> */}
+      <Footer />
     </main>
   );
 }

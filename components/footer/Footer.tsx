@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
   return (
     <footer className="bg-black">
-      <div className="max-w-7xl mx-auto pl-5 pr-5 py-16 flex flex-col gap-20">
+      <div className="max-2xl:max-w-7xl max-2xl:mx-auto mx-28 pl-5 pr-5 py-16 flex flex-col gap-20">
         <div className="text-white flex flex-col gap-5">
           <div className="flex gap-12">
             <img src="svgs/svg1.svg" alt="" className="w-12 h-12" />
