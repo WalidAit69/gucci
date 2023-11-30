@@ -5,9 +5,12 @@ import { useScrollDirection } from "@/hooks/UseScroll";
 import { Plus, Search, Menu } from "lucide-react";
 import { motion, useAnimation } from "framer-motion";
 import NavMenu from "./NavMenu";
+import SearchBar from "./SearchBar";
 
 function Navbar() {
   const [ShowMenu, setShowMenu] = useState(false);
+  const [ShowSearch, setShowSearch] = useState(false);
+  const [ShowContact, setShowContact] = useState(false);
   const ScrollY = useScrollDirection();
 
   const headercontrols = useAnimation();
@@ -44,12 +47,22 @@ function Navbar() {
   }, [ShowMenu]);
 
   function OpenMenu() {
+    setShowContact(false);
+    setShowMenu(true);
+  }
+
+  function OpenContactMenu() {
+    setShowContact(true);
     setShowMenu(true);
   }
 
   return (
     <>
-      <NavMenu ShowMenu={ShowMenu} setShowMenu={setShowMenu} />
+      <NavMenu
+        ShowMenu={ShowMenu}
+        setShowMenu={setShowMenu}
+        ShowContact={ShowContact}
+      />
 
       <motion.header
         animate={headercontrol2}
@@ -61,10 +74,11 @@ function Navbar() {
           className="flex items-center justify-between max-2xl:max-w-7xl max-w-[2000px] mx-auto px-5 h-20 w-full relative"
         >
           <motion.div
+            onClick={OpenContactMenu}
             animate={linkcontrols}
-            className="flex items-center gap-2 text-sm max-lg:hidden cursor-pointer"
+            className="flex rotate items-center text-black font-semibold gap-2 text-sm max-lg:hidden cursor-pointer"
           >
-            <Plus size={13} />
+            <Plus size={13} className="rotated" />
             <p>Contact Us</p>
           </motion.div>
           <motion.div

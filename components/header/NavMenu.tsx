@@ -6,10 +6,11 @@ import { useIsMobile } from "@/hooks/UseIsMobile";
 
 interface Props {
   ShowMenu: boolean;
+  ShowContact: boolean;
   setShowMenu: Dispatch<SetStateAction<boolean>>;
 }
 
-function NavMenu({ ShowMenu, setShowMenu }: Props) {
+function NavMenu({ ShowMenu, setShowMenu, ShowContact }: Props) {
   const isMobile = useIsMobile();
   function CloseMenu() {
     setShowMenu(false);
@@ -67,29 +68,40 @@ function NavMenu({ ShowMenu, setShowMenu }: Props) {
         <X color="white" size={30} onClick={CloseMenu} />
       </motion.div>
 
-      <div className="text-xl max-2xl:text-base h-full py-20 px-10 flex flex-col gap-20 justify-between">
-        <div className="">
-          <ul className="flex flex-col gap-5 menuul">
-            <li>Gifts</li>
-            <li>New In</li>
-            <li>Handbags</li>
-            <li>Travel</li>
-            <li>Women</li>
-            <li>Men</li>
-            <li>Children</li>
-            <li>Jewellery & Watches</li>
-            <li>Beauty</li>
-            <li>Décor & Lifestyle</li>
-            <li>World of Gucci</li>
-          </ul>
+      {ShowContact ? (
+        <div className="text-xl max-2xl:text-base h-full py-20 px-10 flex flex-col gap-20">
+          <h1 className="text-2xl uppercase">Contact Us</h1>
+
+          <div className="flex flex-col gap-5 text-base">
+            <p>Do you need further asssistance?</p>
+            <a className="dicover-btn relative w-fit" href="#">Get in Contact with Us</a>
+          </div>
         </div>
-        <div>
-          <ul className="flex flex-col gap-3 mb-5">
-            <li>Saved Items</li>
-            <li>Contact Us</li>
-          </ul>
+      ) : (
+        <div className="text-xl max-2xl:text-base h-full py-20 px-10 flex flex-col gap-20 justify-between">
+          <div className="">
+            <ul className="flex flex-col gap-5 menuul">
+              <li>Gifts</li>
+              <li>New In</li>
+              <li>Handbags</li>
+              <li>Travel</li>
+              <li>Women</li>
+              <li>Men</li>
+              <li>Children</li>
+              <li>Jewellery & Watches</li>
+              <li>Beauty</li>
+              <li>Décor & Lifestyle</li>
+              <li>World of Gucci</li>
+            </ul>
+          </div>
+          <div>
+            <ul className="flex flex-col gap-3 mb-5">
+              <li>Saved Items</li>
+              <li>Contact Us</li>
+            </ul>
+          </div>
         </div>
-      </div>
+      )}
     </motion.div>
   );
 }
