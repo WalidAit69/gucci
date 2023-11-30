@@ -2,6 +2,7 @@ import { X } from "lucide-react";
 import React, { useEffect } from "react";
 import { Dispatch, SetStateAction } from "react";
 import { motion, useAnimation } from "framer-motion";
+import { useIsMobile } from "@/hooks/UseIsMobile";
 
 interface Props {
   ShowMenu: boolean;
@@ -9,6 +10,7 @@ interface Props {
 }
 
 function NavMenu({ ShowMenu, setShowMenu }: Props) {
+  const isMobile = useIsMobile();
   function CloseMenu() {
     setShowMenu(false);
   }
@@ -17,7 +19,28 @@ function NavMenu({ ShowMenu, setShowMenu }: Props) {
   const xcontrols = useAnimation();
 
   useEffect(() => {
-    if (ShowMenu) {
+    // if (ShowMenu) {
+    //   controls.start({
+    //     right: 0,
+    //     top: 0,
+    //     display: "block",
+    //   });
+    //   xcontrols.start({
+    //     opacity: 1,
+    //     display: "grid",
+    //     transition: { delay: 1 },
+    //   });
+    // } else if (isMobile) {
+    //   controls.start({ top: "100%" });
+    //   controls.start({ display: "none", transition: { delay: 1 } });
+    //   xcontrols.start({ opacity: 0, display: "none" });
+    // } else if (!isMobile) {
+    //   controls.start({ right: "-50%" });
+    //   controls.start({ display: "none", transition: { delay: 1 } });
+    //   xcontrols.start({ opacity: 0, display: "none" });
+    // }
+
+    if (ShowMenu && !isMobile) {
       controls.start({
         right: 0,
         display: "block",
@@ -27,20 +50,34 @@ function NavMenu({ ShowMenu, setShowMenu }: Props) {
         display: "grid",
         transition: { delay: 1 },
       });
+    } else if (ShowMenu && isMobile) {
+      controls.start({
+        left: 0,
+        top: 0,
+        display: "block",
+      });
+      xcontrols.start({
+        opacity: 1,
+        display: "grid",
+        transition: { delay: 1 },
+      });
+    } else if (!ShowMenu && isMobile) {
+      controls.start({ top: "100%" });
+      controls.start({ display: "none", transition: { delay: 1 } });
+      xcontrols.start({ opacity: 0, display: "none" });
     } else {
       controls.start({ right: "-50%" });
       controls.start({ display: "none", transition: { delay: 1 } });
       xcontrols.start({ opacity: 0, display: "none" });
     }
-    
-  }, [ShowMenu]);
+  }, [ShowMenu, isMobile]);
 
   return (
     <motion.div
-      initial={{ right: "-50%", display: "none" }}
+      initial={{ display: "none" }}
       animate={controls}
       transition={{ duration: 1, ease: [0.8, 0, 0, 0.8] }}
-      className="fixed top-0 z-[100] bg-white h-[100vh] w-[600px] overflow-y-scroll"
+      className="fixed top-0 max-lg:top-[100%] z-[100] bg-white max-lg:bg-white/20 max-lg:backdrop-blur-xl h-[100vh] w-[600px] max-xl:w-[400px] max-lg:w-full overflow-y-scroll"
     >
       <motion.div
         initial={{ opacity: 0 }}
