@@ -19,27 +19,6 @@ function NavMenu({ ShowMenu, setShowMenu }: Props) {
   const xcontrols = useAnimation();
 
   useEffect(() => {
-    // if (ShowMenu) {
-    //   controls.start({
-    //     right: 0,
-    //     top: 0,
-    //     display: "block",
-    //   });
-    //   xcontrols.start({
-    //     opacity: 1,
-    //     display: "grid",
-    //     transition: { delay: 1 },
-    //   });
-    // } else if (isMobile) {
-    //   controls.start({ top: "100%" });
-    //   controls.start({ display: "none", transition: { delay: 1 } });
-    //   xcontrols.start({ opacity: 0, display: "none" });
-    // } else if (!isMobile) {
-    //   controls.start({ right: "-50%" });
-    //   controls.start({ display: "none", transition: { delay: 1 } });
-    //   xcontrols.start({ opacity: 0, display: "none" });
-    // }
-
     if (ShowMenu && !isMobile) {
       controls.start({
         right: 0,

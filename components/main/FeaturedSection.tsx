@@ -38,7 +38,7 @@ function FeaturedSection() {
               transition={{ duration: 0.8, delay: 0.5, ease: [0.5, 0, 0, 1] }}
               className="text-sm text-black/70 max-w-sm"
             >
-              Simple encounters full of emotion come to the fore in the House's
+              Simple encounters full of emotion come to the fore in the House&apos;s
               holiday campaign envisioned by Creative Director Sabato De Sarno.
             </motion.p>
             <motion.button
