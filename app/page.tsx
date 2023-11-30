@@ -6,7 +6,7 @@ import ServicesSection from "@/components/main/ServicesSection";
 
 export default function Home() {
   return (
-    <main className="w-full">
+    <main className="w-full isblur transition-all">
       <MainSection />
       <ExploreSection />
       <FeaturedSection />
