@@ -44,6 +44,21 @@ function Navbar() {
         el.classList.remove("blured");
       });
     }
+
+    const handleClick = () => {
+      setShowMenu(false);
+    };
+
+    const elements = document.querySelectorAll(".isblur");
+    elements.forEach((el) => {
+      el.addEventListener("click", handleClick);
+    });
+
+    return () => {
+      elements.forEach((el) => {
+        el.removeEventListener("click", handleClick);
+      });
+    };
   }, [ShowMenu]);
 
   function OpenMenu() {
